@@ -187,7 +187,7 @@
 # can compare int64s
 
     Code
-      compare(int64_1, int64_1)
+      compare(int64_0, int64_0)
     Output
       v No differences
     Code
@@ -195,6 +195,35 @@
     Output
       `old`: "0"
       `new`: "1"
+    Code
+      compare(int64_0, int64_n)
+    Output
+      `old`: "0" 
+      `new`: "NA"
+    Code
+      compare(int64_1, int64_0)
+    Output
+      `old`: "1"
+      `new`: "0"
+    Code
+      compare(int64_1, int64_n)
+    Output
+      `old`: "1" 
+      `new`: "NA"
+    Code
+      compare(int64_n, int64_n)
+    Output
+      v No differences
+    Code
+      compare(c(int64_0, int64_1), c(int64_0, int64_0))
+    Output
+      `old`: "0" "1"
+      `new`: "0" "0"
+    Code
+      compare(int64_0, int64_e)
+    Output
+      `old`: "0"
+      `new`:    
 
 # can ignore numeric differences between int64 and other numbers
 
@@ -432,17 +461,17 @@
       # Different body
       compare(f3, f1, ignore_srcref = FALSE)
     Output
-      `attr(old, 'srcref')`: 233  9 235 3  9 3 233 235
-      `attr(new, 'srcref')`: 229 15 231 3 15 3 229 231
+      `attr(old, 'srcref')`: 241  9 243 3  9 3 241 243
+      `attr(new, 'srcref')`: 237 15 239 3 15 3 237 239
       
-      `attr(body(old), 'srcref')[[1]]`: 233 20 233 20 20 20 233 233
-      `attr(body(new), 'srcref')[[1]]`: 229 26 229 26 26 26 229 229
+      `attr(body(old), 'srcref')[[1]]`: 241 20 241 20 20 20 241 241
+      `attr(body(new), 'srcref')[[1]]`: 237 26 237 26 26 26 237 237
       
-      `attr(body(old), 'srcref')[[2]]`: 234 5 234 9 5 9 234 234
-      `attr(body(new), 'srcref')[[2]]`: 230 5 230 9 5 9 230 230
+      `attr(body(old), 'srcref')[[2]]`: 242 5 242 9 5 9 242 242
+      `attr(body(new), 'srcref')[[2]]`: 238 5 238 9 5 9 238 238
       
-      `attr(body(old), 'wholeSrcref')`: 1 0 235 3 0 3 1 235
-      `attr(body(new), 'wholeSrcref')`: 1 0 231 3 0 3 1 231
+      `attr(body(old), 'wholeSrcref')`: 1 0 243 3 0 3 1 243
+      `attr(body(new), 'wholeSrcref')`: 1 0 239 3 0 3 1 239
       
       `body(old)`: `{` `    1 + 3` `}`
       `body(new)`: `{` `    1 + 2` `}`

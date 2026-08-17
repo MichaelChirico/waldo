@@ -105,9 +105,17 @@ test_that("can ignore minor numeric differences", {
 test_that("can compare int64s", {
   int64_0 <- bit64::as.integer64(0)
   int64_1 <- bit64::as.integer64(1)
+  int64_n <- bit64::as.integer64(NA)
+  int64_e <- bit64::integer64(0L)
   expect_snapshot({
-    compare(int64_1, int64_1)
+    compare(int64_0, int64_0)
     compare(int64_0, int64_1)
+    compare(int64_0, int64_n)
+    compare(int64_1, int64_0)
+    compare(int64_1, int64_n)
+    compare(int64_n, int64_n)
+    compare(c(int64_0, int64_1), c(int64_0, int64_0))
+    compare(int64_0, int64_e)
   })
 })
 

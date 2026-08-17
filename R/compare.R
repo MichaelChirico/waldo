@@ -429,7 +429,7 @@ is_identical <- function(x, y, opts) {
   } else if (is_function(x) && is_function(y) && !opts$ignore_srcref) {
     identical(x, y) && identical(attr(x, "srcref"), attr(y, "srcref"))
   } else {
-    identical(x, y)
+    identical(x, y, num.eq = FALSE)
   }
 }
 

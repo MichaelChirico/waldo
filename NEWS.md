@@ -1,5 +1,8 @@
 # waldo (development version)
 
+* `compare()` correctly distinguishes `bit64::as.integer64(0L)` and
+  `bit64::NA_integer64_`.
+
 # waldo 0.6.2
 
 * `compare()` now goes into more details if you're comparing an S3 object with 
