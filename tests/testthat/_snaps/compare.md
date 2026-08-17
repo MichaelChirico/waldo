@@ -737,6 +737,19 @@
       `old[[3]]$x`: 1.0
       `new[[3]]$x`: 3.0
 
+# can compare CHARSXP
+
+    Code
+      compare(char1, char2)
+    Output
+      `old` is CHARSXP: foo
+      `new` is CHARSXP: bar
+    Code
+      compare(char1, "foo")
+    Output
+      `old` is an internal string
+      `new` is a character vector ('foo')
+
 # differences in DOTSXP are ignored
 
     Code
