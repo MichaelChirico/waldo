@@ -10,7 +10,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/r-lib/waldo/blob/master/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/r-lib/waldo/blob/main/DESCRIPTION)
 
 Wickham H (2026). *waldo: Find Differences Between R Objects*. R package
 version 0.6.2.9000, <https://waldo.r-lib.org>.
